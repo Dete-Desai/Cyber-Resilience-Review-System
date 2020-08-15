@@ -1,0 +1,168 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Situational Awareness Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'situationalawarenessgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 3 Threat information is communicated.</h5>
+                    <form action="{% url 'sag3form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Is threat information communicated to stakeholders? [COMM:SG3.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if threat information is communicated to all identified
+                                            internal and external
+                                            stakeholders.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Threat information is communicated to all identified stakeholders
+                                            (established in SA:G2.Q1 and SA:G2.Q2)
+                                            as required.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Threat information is communicated to some of the identified
+                                            stakeholders.
+                                            • Or; some threat information is communicated to all identified
+                                            stakeholders.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Have resources been assigned authority and accountability for communicating threat
+                            information?
+                            [COMM:SG2.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the authority and accountability for communicating
+                                            threat information has
+                                            been assigned.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The authority and accountability for communicating threat information
+                                            has been assigned to all
+
+                                            responsible resources.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The authority and accountability for communicating threat information
+                                            has been assigned to some of the
+                                            responsible resources.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Have resources been trained with respect to their specific role in communicating
+                            threat information?
+                            [COMM:SG2.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the resources responsible for communicating threat
+                                            information have been
+                                            trained for their specific role.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • All resources assigned to perform threat communication activities have
+                                            been trained.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Some resources assigned to perform threat communication activities
+                                            have been trained.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'sag3table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

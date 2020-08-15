@@ -1,0 +1,40 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>  
+            </div>
+                    <div>Cyber Resilience Review System
+                        <div class="page-title-subheading">Situational Awareness Maturity Indicator Level Domain Forms
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--start here-->
+            <a href="{% url 'milforms' %}">
+                <i class="fa fa-arrow-left"> Back</i>
+            </a>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-card mb-3 card">
+                    <div class="card-body">
+                        <h5 class="card-title">Situational Awareness Management Maturity Indicator Level Forms
+                        </h5>
+                        <a href="{% url 'samil2form' %}">
+                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Situational Awareness Management MIL 2 Form</i>
+                        </a>
+                        <a href="{% url 'samil3form' %}">
+                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Situational Awareness Management MIL 3 Form</i>
+                        </a>
+                        <a href="{% url 'samil4form' %}">
+                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Situational Awareness Management MIL 4 Form</i>
+                        </a>
+                        <a href="{% url 'samil5form' %}">
+                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Situational Awareness Management MIL 5 Form</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endblock %} 

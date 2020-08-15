@@ -1,0 +1,367 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Incident Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'incidentmanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 2 A process for detecting, reporting, triaging, and analyzing events is
+                        established. </h5>
+                    <form action="{% url 'img2form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Are events detected and reported (to include cybersecurity events related to
+                            personnel activity, network
+                            activity, the physical environment, and information)? [IMC:SG2.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if events are detected and reported.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Events are detected and reported for all assets that support the
+                                            critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Events are detected and reported for some assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Is event data logged in an incident knowledgebase or similar mechanism? [IMC:SG2.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if event data is logged in an incident knowledgebase or
+                                            similar mechanism.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization logs all event data relevant to the critical service
+                                            in an incident knowledgebase or similar
+                                            mechanism.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization logs relevant data on some events.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are events categorized? [IMC:SG2.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if events are categorized.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization categorizes all events relevant to the critical
+                                            service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization categorizes some events.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are events analyzed to determine if they are related to other events? [IMC:SG2.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if events are analyzed for their relationship to other
+                                            events.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization analyzes all events relevant to the critical service
+                                            to determine if they are related to
+                                            other events.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization analyzes some events.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            5. Are events prioritized? [IMC:SG2.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if events are prioritized.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization prioritizes all events relevant to the critical
+                                            service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization prioritizes some events.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_five|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            6. Is the status of events tracked? [IMC:SG2.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the status of events are tracked.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization tracks the status of all events relevant to the
+                                            critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization tracks the status of some events.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_six|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            7. Are events managed to resolution? [IMC:SG2.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if events are managed to resolution.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization manages to resolution, all events that are relevant
+                                            to the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization manages some events to a resolution.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_seven|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            8. Have requirements (rules, laws, regulations, policies, etc.) for identifying event
+                            evidence for forensic
+                            purposes been identified? [IMC:SG2.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if requirements for identifying event evidence for forensic
+                                            purposes have been
+                                            identified.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has identified and documented relevant requirements
+                                            for identifying event evidence for
+                                            forensic purposes.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            Requirements for identifying event evidence are in development and
+                                            partially documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_eight|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            9. Is there a process to ensure event evidence is handled as required by law or other
+                            obligations?
+                            [IMC:SG2.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the organization has implemented a process to ensure
+                                            event evidence is
+                                            handled as required by law or other obligations.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • There is a documented process to ensure event evidence is handled as
+                                            required by law or other
+
+                                            obligations.
+
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • A process is in development and partially documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_nine|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'img2table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <i class="fas fa-assistive-listening-systems"></i>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Domain Goals Inputs Table Reports.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'edmg2form' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+</div>
+<div class="row">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <div class="card-body">
+                        <div class="row col-lg-12">
+                            <div class="col-md-10">
+                                <h5 class="card-title">External Dependencies Management Inputs for Goals</h5>
+                            </div>
+                        </div>
+                        <br></br>
+
+                        <table class="mb-0 table">
+                            <thead>
+                                <tr>
+                                    <th>Expert ID</th>
+                                    <th>Form ID</th>
+                                    <th>Question</th>
+                                    <th>Response</th>
+                                    <th>FeedBack</th>
+                                    <th>Time/Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for edmg2form in edmg2table %}
+                                <tr>
+                                    <td>{{edmg2form.expertid}}</td>
+                                    <td>{{edmg2form.formid}}</td>
+                                    <td>1. Are risks due to external dependencies identified and managed? [EXD:SG2.SP1]
+                                    </td>
+                                    <td>{{edmg2form.response_one}}</td>
+                                    {% if edmg2form.feedback %}
+
+                                    {% for key, feedback in edmg2form.feedback.items %}
+                                    {% if key == "response_one" %}
+                                    <td>
+                                        {{feedback}}
+                                    </td>
+                                    <td>
+                                        <span id="datetime"></span>
+
+                                        <script>
+                                            var dt = new Date();
+                                            document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                        </script>
+                                    </td>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

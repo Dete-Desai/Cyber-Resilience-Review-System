@@ -1,0 +1,201 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">External Dependencies Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'externaldependenciesmanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 4 Performance of external entities is managed. </h5>
+                    <form action="{% url 'edmg4form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Is the performance of external entities monitored against resilience requirements?
+                            [EXD:SG4.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the performance of external entities is monitored
+                                            against the requirements of
+                                            the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization monitors the performance of all external entities
+                                            that support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization monitors the performance of some external entities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Has responsibility been assigned for monitoring external entity performance (as
+                            related to resilience
+                            requirements)? [EXD:SG4.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if responsibility for monitoring external entities is
+                                            assigned.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The responsibility for monitoring the performance of each external
+                                            entity that supports the critical service
+                                            has been assigned.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The responsibility for monitoring the performance of some external
+                                            entities has been assigned.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are corrective actions taken as necessary to address issues with external entity
+                            performance (as related to
+                            resilience requirements)? [EXD:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if corrective actions are taken to address issues with the
+                                            performance of external
+                                            entities (as related to resilience requirements).
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has taken corrective actions to address performance
+                                            issues for all external entities that
+                                            support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization has taken corrective actions to address performance
+                                            issues for some external entities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are corrective actions evaluated to ensure issues are remedied? [EXD:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To evaluate if the issues with external entity performance have been
+                                            remedied by the corrective
+                                            actions.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has evaluated corrective actions that address
+                                            performance issues for all external entities
+                                            supporting the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization has evaluated corrective actions that address
+                                            performance issues for some external
+                                            entities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'edmg4table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

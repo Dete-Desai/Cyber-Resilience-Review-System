@@ -1,0 +1,166 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Service Continuity Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'servicecontinuitymanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 4 Service continuity plans are executed and reviewed. </h5>
+                    <form action="{% url 'scmg4form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Have conditions been identified that trigger the execution of the service continuity
+                            plan? [SC:SG6.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if conditions have been identified that trigger the
+                                            execution of the service
+                                            continuity plan.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Conditions that trigger the execution of each service continuity plan
+                                            that supports the critical service have
+                                            been identified and documented.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Conditions that trigger the execution of some service continuity plans
+                                            have been identified and
+                                            documented.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Is execution of service continuity plans reviewed? [SC:SG6.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the execution of service continuity plans is reviewed.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The execution of each service continuity plan that supports the
+                                            critical service is reviewed.
+                                            • Or; if service continuity plans have not been executed, reviews of
+                                            executed plans are required as part of a
+                                            standard process.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The execution of some service continuity plans is reviewed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are improvements identified as a result of executing service continuity plans?
+                            [SC:SG7.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if improvements are identified as a result of executing
+                                            service continuity plans.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Improvements to each executed service continuity plan that supports
+                                            the critical service are identified
+                                            and documented.
+                                            • Or; if service continuity plans have not been executed, the
+                                            identification of improvements to executed
+                                            plans is required as part of a standard process.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Improvements to some executed service continuity plans are identified
+                                            and documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'scmg4table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

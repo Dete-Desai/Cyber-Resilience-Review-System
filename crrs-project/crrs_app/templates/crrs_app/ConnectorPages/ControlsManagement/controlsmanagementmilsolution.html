@@ -1,0 +1,42 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+<div class="page-title-wrapper">
+    <div class="page-title-heading">
+        <div class="page-title-icon">
+            <i class="fas fa-assistive-listening-systems"></i>  
+        </div>
+                <div>Cyber Resilience Review System
+                    <div class="page-title-subheading">Controls Management Maturity Indicator Level Feedback
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--start here-->
+        <a href="{% url 'domainmilsolutions' %}">
+            <i class="fa fa-arrow-left">Back</i>
+        </a>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Controls Management Feedback Maturity Indicator Level Solutions Reports
+                    </h5>
+                    <a href="{% url 'cmmil2solution' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management MIL 2 Feedback Solution Report</i>
+                    </a>
+                    <a href="{% url 'cmmil3solution' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management MIL 3 Feedback Solution Report</i>
+                    </a>
+                    <a href="{% url 'cmmil4solution' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management MIL 4 Feedback Solution Report</i>
+                    </a>
+                    <a href="{% url 'cmmil5solution' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management MIL 5 Feedback Solution Report</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

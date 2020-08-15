@@ -1,0 +1,269 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Configuration Change Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'configurationchangemanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 3 Asset configuration baselines are established. </h5>
+                    <form action="{% url 'ccmg3form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Do technology assets have configuration baselines? [TM:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if configuration baselines exist for technology assets that
+                                            support the service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Configuration baselines exist for all technology assets that support
+                                            the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Configuration baselines exist for some technology assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>>
+                            <br>
+                            <!--QUESTION-->
+                            2. Is approval obtained for proposed changes to baselines? [TM:SG4.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if approval is obtained for changes to configuration
+                                            baselines of the technology
+                                            assets that support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Approval is obtained for all proposed changes to configuration
+                                            baselines of the technology assets that
+                                            support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Approval is obtained for some proposed changes to configuration
+                                            baselines.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Has a baseline of network operations been established? [TM:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if a baseline of network operations for all systems and
+                                            assets that support the
+                                            critical service has been established.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • A baseline of network operations has been established for all systems
+                                            and assets that support the critical
+                                            service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • A baseline of network operations has been established for some systems
+                                            and assets that support the
+                                            critical service.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Is the baseline of network operations managed? [TM:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the established baseline of network operations is
+                                            managed for all systems and
+                                            assets that support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The established baseline of network operations is managed for all
+                                            systems and assets that support the
+                                            critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The established baseline of network operations is managed for some
+                                            systems and assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            5. Has a baseline of expected data flows for users and systems been established?
+                            [TM:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if a baseline of expected data flows for all user and
+                                            system assets that support the
+                                            critical service has been established.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • A baseline of expected data flows has been established for all user
+                                            and system assets that support the
+                                            critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • A baseline of expected data flows has been established for some user
+                                            and system assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_five|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            6. Is the baseline of expected data flows for users and systems managed? [TM:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the established baseline of expected data flows is
+                                            managed.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The established baseline of expected data flows is managed for all
+                                            user and system assets that support
+                                            the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The established baseline of expected data flows is managed for some
+                                            user and system assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_six|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'ccmg3table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

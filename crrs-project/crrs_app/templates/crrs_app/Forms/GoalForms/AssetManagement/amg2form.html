@@ -1,0 +1,240 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Asset Managemement Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'assetmanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 2 Assets are inventoried, and the authority and responsibility for these
+                        assets is established.</h5>
+                    <form action="{% url 'amg2form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Are the assets that directly support the critical service inventoried (technology
+                            includes hardware, software,
+                            and external information systems)? [ADM:SG1.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the assets that support the critical service are
+                                            inventoried.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            The organization inventories all assets that support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            The organization inventories some assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Do asset descriptions include protection and sustainment requirements? [ADM:SG1.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if asset descriptions include protection and sustainment
+                                            requirements.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            The organization documents protection and sustainment requirements in asset
+                                            descriptions for all assets
+                                            supporting the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            The organization documents protection and sustainment requirements in asset
+                                            descriptions for some assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are both owners and custodians of assets documented in asset descriptions? [ADM:SG1.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if owners and custodians of assets are documented in asset
+                                            descriptions.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            The organization documents owners and custodians in asset descriptions for
+                                            all assets that support the critical service
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            The organization documents owners and custodians in asset descriptions for
+                                            some assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are the physical locations of assets (both within and outside the organization)
+                            documented in the asset
+                            inventory? [ADM:SG1.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the physical locations of assets are documented in the asset
+                                            inventory.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            The organization documents the location of all assets that support the
+                                            critical service in the asset
+                                            inventory
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            The organization documents the location of some assets in the asset
+                                            inventory.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            5. Are organizational communications and data flows mapped and documented in the asset
+                            inventory?
+                            [ADM:SG1.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if organizational communications and
+                                            data flows are mapped and documented in the asset inventory.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            Organizational communications and data flows are mapped and documented in
+                                            the asset inventory for all technology assets that support the critical
+                                            service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            Organizational communications and data flows are mapped and documented in
+                                            the asset inventory for some technology assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_five|as_crispy_field}}
+                            </div>
+
+                        </fieldset>
+                        <div class="col-md-12 position-relative form-check">
+                            {{form.amg2_complete|as_crispy_field}}
+                        </div>
+                        <div class="col-md-12 position-relative form-check">
+                            {{amg1form.amg2_incomplete}}
+                        </div>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'amg2table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

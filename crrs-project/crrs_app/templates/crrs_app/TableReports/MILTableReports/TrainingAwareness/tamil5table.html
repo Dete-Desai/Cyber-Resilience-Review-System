@@ -1,0 +1,107 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <i class="fas fa-assistive-listening-systems"></i>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Domain Maturity Indicator Level and Practices Inputs Reports.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'tamil5form' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+</div>
+<div class="row">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <div class="row col-lg-12">
+                        <div class="col-md-10">
+                            <h5 class="card-title">Training Awareness Inputs for Maturity Indicator (MIL2)
+                                Level
+                                Table
+                                Report</h5>
+                        </div>
+                    </div>
+                    <br></br>
+
+                    <table class="mb-0 table">
+                        <thead>
+                            <tr>
+                                <th>Expert ID</th>
+                                <th>Form ID</th>
+                                <th>Question</th>
+                                <th>Response</th>
+                                <th>FeedBack</th>
+                                <th>Time/Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for tamil5form in tamil5table %}
+                            <tr>
+                                <td>{{tamil5form.expertid}}</td>
+                                <td>{{tamil5form.formid}}</td>
+                                <td>1. Has the organization adopted a standard definition of training activities from
+                                    which operating
+                                    units can derive practices that fit their unique operating circumstances?
+                                    [OTA:GG3.GP1],[GG3.GP1] </td>
+                                <td>{{tamil5form.response_one}}</td>
+                                {% if tamil5form.feedback %}
+
+                                {% for key, feedback in tamil5form.feedback.items %}
+                                {% if key == "response_one" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{tamil5form.expertid}}</td>
+                                <td>{{tamil5form.formid}}</td>
+                                <td>2. Are improvements to training documented and shared across the organization?
+                                    [OTA:GG3.GP2],[GG3.GP2] </td>
+                                <td>{{tamil5form.response_two}}</td>
+                                {% if tamil5form.feedback %}
+
+                                {% for key, feedback in tamil5form.feedback.items %}
+                                {% if key == "response_two" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

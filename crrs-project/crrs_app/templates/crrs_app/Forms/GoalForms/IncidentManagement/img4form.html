@@ -1,0 +1,201 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Incident Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'incidentmanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 4 A process for responding to and recovering from incidents is
+                        established.</h5>
+                    <form action="{% url 'img4form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Are incidents escalated to stakeholders for input and resolution? [IMC:SG4.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if incidents are escalated to stakeholders for input and
+                                            resolution.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization escalates all incidents, relevant to the critical
+                                            service, to the proper stakeholders for
+                                            input and resolution.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization escalates some incidents to the proper stakeholders.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Are responses to declared incidents developed and implemented according to pre-defined
+                            procedures?
+                            [IMC:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if responses to declared incidents are developed and
+                                            implemented according to
+                                            pre-defined procedures.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization uses predefined procedures to develop and implement a
+                                            response to all declared
+                                            incidents.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization used predefined procedures to develop and implement a
+                                            response to some declared
+                                            incidents
+                                            • Or; pre-defined procedures for responding to declared incidents are in
+                                            development and partially
+
+                                            documented.
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are incident status and response communicated to affected parties (including public
+                            relations staff and
+                            external media outlets)? [IMC:SG4.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if incident status and response are communicated to affected
+                                            parties.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization communicates incident status and response to all affected
+                                            parties.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization communicates incident status and response to some
+                                            affected parties.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are incidents tracked to resolution? [IMC:SG4.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if incidents are tracked to resolution.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization tracks all incidents relevant to the critical service to
+                                            resolution.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization tracks some incidents to resolution.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'img4table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

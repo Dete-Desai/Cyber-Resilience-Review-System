@@ -1,0 +1,40 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Controls Management Goal Domain Forms
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'goalsforms' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Controls Management Goal Forms
+                    </h5>
+                    <a href="{% url 'cmg1form' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management Goal 1 Form</i>
+                    </a>
+                    <a href="{% url 'cmg2form' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management Goal 2 Form</i>
+                    </a>
+                    <a href="{% url 'cmg3form' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management Goal 3 Form</i>
+                    </a>
+                    <a href="{% url 'cmg4form' %}">
+                        <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Controls Management Goal 4 Form</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endblock %}

@@ -1,0 +1,281 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Service Continuity Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'servicecontinuitymanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 1 Service continuity plans for high value services are developed.</h5>
+                    <form action="{% url 'scmg1form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Are service continuity plans developed and documented for assets required for
+                            delivery of the critical
+                            service? [SC:SG3.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if service continuity plans are developed and documented
+                                            for assets required for
+                                            the delivery of the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has developed and documented service continuity plans
+                                            for all assets required for the
+                                            delivery of the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Service continuity plans have been developed and documented for some
+                                            assets.
+                                            • Or; service continuity plans are in development and partially
+                                            documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Are service continuity plans developed using established standards, guidelines, and
+                            templates? [SC:SG3.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if service continuity plans for the critical service are
+                                            developed using standards,
+                                            guidelines, and templates.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has developed each service continuity plan for the
+                                            critical service using established
+                                            standards, guidelines, and templates.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Some service continuity plans are developed using standards,
+                                            guidelines, and templates.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are staff members assigned to execute specific service continuity plans? [SC:SG3.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if staff members are assigned to execute specific service
+                                            continuity plans.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has assigned staff required for the execution of each
+                                            service continuity plan established
+                                            for the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization has assigned staff required for the execution of some
+                                            plans.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are key contacts identified in the service continuity plans? [SC:SG2.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if key contacts are identified in service continuity plans.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has identified key contacts in each service
+                                            continuity plan established for the critical
+                                            service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization has identified key contacts in some of the service
+                                            continuity plans.
+                                            • Or; The organization has identified some key contacts in the service
+                                            continuity plans.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            5. Are service continuity plans stored in a controlled manner and available to all those
+                            who need to know?
+                            [SC:SG3.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if service continuity plans are stored in a controlled
+                                            manner and available to
+                                            those who need to know.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization stores all service continuity plans for the critical
+                                            service in a controlled manner, and the
+                                            plans are available to all who need to know.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization stores all service continuity plans for the critical
+                                            service in a controlled manner, and the
+                                            plans are available to some who need to know.
+                                            • Or; the organization stores some service continuity plans for the
+                                            critical service in a controlled manner,
+                                            and those plans are available to all who need to know.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_five|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            6. Are availability requirements such as recovery time objectives and recovery point
+                            objectives established?
+                            [TM:SG5.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if availability requirements are established for service
+                                            continuity plans.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization has established and documented availability
+                                            requirements for the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Availability requirements are in development and partially documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_six|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'scmg1table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

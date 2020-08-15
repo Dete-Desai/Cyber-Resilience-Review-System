@@ -1,0 +1,220 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Service Continuity Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'servicecontinuitymanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 3 Service continuity plans are tested to ensure they meet their stated
+                        objectives.</h5>
+                    <form action="{% url 'scmg3form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Have standards for testing service continuity plans been implemented? [SC:SG5.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if standards for testing service continuity plans have been
+                                            implemented.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • There are documented standards for testing service continuity plans.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Standards for testing service continuity plans are in development and
+                                            partially documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Has a schedule for testing service continuity plans been established? [SC:SG5.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if a schedule for testing service continuity plans is
+                                            established.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • There is a documented schedule for testing all service continuity
+                                            plans that support the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The schedule for testing service continuity plans is in development
+                                            and partially documented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are service continuity plans tested? [SC:SG5.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if service continuity plans are tested.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Each service continuity plan that supports the critical service is
+                                            tested.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Some service continuity plans are tested.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are backup and storage procedures for high-value information assets tested?
+                            [KIM:SG6.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if backup and storage procedures for high-value information
+                                            assets are tested.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Backup and storage procedures are tested for all high-value
+                                            information assets that support the critical
+                                            service
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Backup and storage procedures are tested for some high-value
+                                            information assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            5. Are test results compared with test objectives to identify needed improvements to
+                            service continuity plans?
+                            [SC:SG5.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if test results are compared to test objectives to identify
+                                            improvements to service
+                                            continuity plans.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Test results for each service continuity plan required for the
+                                            delivery of the critical service are compared
+                                            with test objectives to identify needed improvements.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Test results for some service continuity plans are compared with test
+                                            objectives to identify needed
+                                            improvements.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_five|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <button class="mt-1 btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

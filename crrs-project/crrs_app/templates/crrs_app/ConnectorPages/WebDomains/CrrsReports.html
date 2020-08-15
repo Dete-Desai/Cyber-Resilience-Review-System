@@ -1,0 +1,48 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">System Reports
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'home' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal Reports
+                    </h5>
+                    <a href="{% url 'goalstables' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Goals Tables</i>
+                    </a>
+                    <a href="{% url 'goalssecuritylevels' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Goal Domain Chart</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Maturity Indicator Level (MIL) Reports
+                    </h5>
+                    <a href="{% url 'miltables' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Maturity Indicator Level (MIL) Reports</i>
+                    </a>
+                    <a href="{% url 'milsecuritylevels' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Maturity Indicator Level (MIL) Charts</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endblock %}

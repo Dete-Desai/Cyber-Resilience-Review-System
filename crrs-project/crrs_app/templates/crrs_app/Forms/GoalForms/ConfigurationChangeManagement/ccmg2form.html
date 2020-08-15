@@ -1,0 +1,417 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Configuration Change Management Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'configurationchangemanagementgoalform' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Goal 2 The integrity of technology and information assets is managed. </h5>
+                    <form action="{% url 'ccmg2form' %}" method="post" autocomplete="off" class="col-md-12">
+                        {% csrf_token %}
+                        <div class="position-relative form-group">
+                            {{form.expertid|as_crispy_field}}
+                        </div>
+                        <div class="position-relative form-group">
+                            {{form.formid|as_crispy_field}}
+                        </div>
+                        <fieldset class="position-relative form-group">
+                            <!--QUESTION-->
+                            1. Is configuration management performed for technology assets? [TM:SG4.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if configuration management is performed for technology
+                                            assets.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The organization performs configuration management for all technology
+                                            assets that support the service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The organization performs configuration management for some technology
+                                            assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_one|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            2. Are techniques in use to detect changes to technology assets? [TM:SG4.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if techniques are in use to detect changes to technology
+                                            assets.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • Techniques are in use to detect changes for all technology assets that
+                                            affect the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Techniques are in use to detect changes for some technology assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_two|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            3. Are modifications to technology assets reviewed? [TM:SG4.SP2; TM:SG4.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if modifications to technology assets are reviewed.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • All modifications to technology assets that support the critical
+                                            service are reviewed.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Some modifications to technology assets are reviewed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_three|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            4. Are integrity requirements used to determine which staff members are authorized to
+                            modify information
+                            assets? [KIM:SG5.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if integrity requirements of information assets are used to
+                                            determine which staff
+                                            members are authorized to modify those assets.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            The integrity requirements for each information asset that supports the
+                                            critical service are used to
+                                            determine which staff members are authorized to modify that asset.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The integrity requirements for some information assets are used to
+                                            determine which staff members are
+                                            authorized to modify those assets.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_four|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            5. Is the integrity of information assets monitored? [KIM:SG5.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the integrity of information assets that support the
+                                            critical service is monitored.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The integrity of all information assets that support the critical
+                                            service is monitored.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The integrity of some information assets is monitored.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_five|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            6. Are unauthorized or unexplained modifications to technology assets addressed?
+                            [TM:SG4.SP2; TM:SG4.SP3]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if unauthorized or unexplained modifications to technology
+                                            assets are addressed.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            All unauthorized or unexplained modifications to technology assets that
+                                            support the critical service are
+                                            addressed.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            Some unauthorized or unexplained modifications to technology assets are
+                                            addressed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_six|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            7. Are modifications to technology assets tested before being committed to production
+                            systems?
+                            [TM:SG4.SP4]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if modifications to technology assets are tested before
+                                            being committed to
+                                            production.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • All modifications to technology assets that support the critical
+                                            service are tested before being committed
+                                            to production.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • Some modifications to technology assets are tested before being
+                                            committed to production.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_seven|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            8. Has a process for managing access to technology assets been implemented? [TM:SG4.SP1]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if a process for managing access to technology assets has
+                                            been implemented.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • There is a documented and implemented process for managing access to
+                                            technology assets that support
+                                            the critical service.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • A process for managing access to technology assets is in development
+                                            and partially implemented.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_eight|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            9. Is the maintenance and repair of assets performed and logged in a timely manner?
+                            [ADM:SG3.SP2],[TM:SG5.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the maintenance and repair of assets are performed and
+                                            logged in a timely
+                                            manner.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            • The maintenance and repair of all assets that support the critical
+                                            service are performed and logged in a
+                                            timely manner.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The maintenance and repair of some assets that support the critical
+                                            service are performed and logged in a
+                                            timely manner.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_nine|as_crispy_field}}
+                            </div>
+                            <br>
+                            <!--QUESTION-->
+                            10. Is the maintenance and repair of assets performed with approved and controlled tools
+                            and/or methods?
+                            [ADM:SG3.SP2][TM:SG5.SP2]
+                            <!-- Button to Open the Modal -->
+                            <div class="widget-content-left">
+                                <div class="btn-group ">
+                                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        class="p-0 btn">
+                                        <i class="fa fa-list-ul ml-2 opacity-8">
+                                            <b2>Read More</b2>
+                                        </i>
+                                    </a>
+                                    <div tabindex="-6" role="menu" aria-hidden="true"
+                                        class="dropdown-menu dropdown-menu-left">
+                                        <p>
+                                            To determine if the maintenance and repair of assets are performed with
+                                            approved and
+                                            controlled tools and/or methods.
+                                        </p>
+                                        <p>
+                                            Criteria for “Yes” Response:
+                                            The maintenance and repair of all assets that support the critical
+                                            service are performed with approved
+                                            and controlled tools and/or methods.
+                                        </p>
+                                        <p>
+                                            Criteria for “Incomplete” Response:
+                                            • The maintenance and repair of some assets that support the critical
+                                            service are performed with approved
+                                            and controlled tools and/or methods.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--popup button-->
+                            <div class="col-md-12 position-relative form-check">
+                                {{form.response_ten|as_crispy_field}}
+                            </div>
+                        </fieldset>
+                        <div class=" row col-md-12 ">
+                            <div class="col-md-8 position-relative form-check">
+                                <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                                        class="fas fa-database"></i>Submit</button>
+                            </div>
+                            <div class="col-md-4 position-relative form-check">
+                                <a href="{% url 'ccmg2table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                                    <i class="fas fa-stream"></i>Back To Report
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

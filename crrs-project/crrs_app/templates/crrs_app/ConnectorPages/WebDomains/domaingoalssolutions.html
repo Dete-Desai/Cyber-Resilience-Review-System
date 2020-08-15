@@ -1,0 +1,68 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Goal Domains System Feedback Solutions
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'home' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Domain Level
+                    </h5>
+                    <a href="{% url 'assetmanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Asset Management</i>
+                    </a>
+                    <a href="{% url 'controlsmanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Controls Management</i>
+                    </a>
+                    <a href="{% url 'configurationchangemanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Configuration and Change Management</i>
+                    </a>
+                    <a href="{% url 'vulnerabilitymanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Vulnerability Management</i>
+                    </a>
+                    <a href="{% url 'incidentmanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Incident Management</i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Domain Level
+                    </h5>
+                    <a href="{% url 'servicecontinuitymanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Service Continuity Management</i>
+                    </a>
+                    <a href="{% url 'riskmanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Risk Management</i>
+                    </a>
+                    <a href="{% url 'externaldependenciesmanagementgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">External Dependencies Management</i>
+                    </a>
+                    <a href="{% url 'trainingawarenessgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Training and Awareness</i>
+                    </a>
+                    <a href="{% url 'situationalawarenessgoalssolution' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Situational Awareness</i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+{% endblock %}

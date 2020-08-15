@@ -1,0 +1,58 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+                    <div class="app-page-title">
+                        <div class="page-title-wrapper">
+                            <div class="page-title-heading">
+                                <div class="page-title-icon">
+                                    <i class="fas fa-assistive-listening-systems"></i>  
+                                </div>
+                                    <div>Cyber Resilience Review System
+                                        <div class="page-title-subheading">Asset Management Goal Domain Forms
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--start here-->
+                            <!--start here-->
+                            <a href="{% url 'goalstables' %}">
+                                <i class="fa fa-arrow-left"> Back</i>
+                            </a>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Asset Management Goals Table Reports
+                                        </h5>
+                                        <a href="{% url 'amg1table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 1 Report Table</i>
+                                        </a>
+                                        <a href="{% url 'amg2table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 2 Report Table</i>
+                                        </a>
+                                        <a href="{% url 'amg3table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 3 Report Table</i>
+                                        </a>
+                                        <a href="{% url 'amg4table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 4 Report Table</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="main-card mb-3 card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Asset Management Goals Table Reports
+                                        </h5>
+                                        <a href="{% url 'amg5table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 5 Report Table</i>
+                                        </a>
+                                        <a href="{% url 'amg6table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 6 Report Table</i>
+                                        </a>
+                                        <a href="{% url 'amg7table' %}">
+                                            <i class="mb-2 mr-2 btn-transition btn btn-outline-info">Asset Management Goal 7 Report Table</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endblock %} 

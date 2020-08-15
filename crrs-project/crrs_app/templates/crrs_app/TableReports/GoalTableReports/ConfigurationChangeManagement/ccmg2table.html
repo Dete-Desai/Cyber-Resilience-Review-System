@@ -1,0 +1,297 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <i class="fas fa-assistive-listening-systems"></i>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Domain Goals Inputs Table Reports.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'ccmg2form' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+</div>
+<div class="row">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <div class="row col-lg-12">
+                        <div class="col-md-10">
+                            <h5 class="card-title">Configuration Change Management Inputs for Goals</h5>
+                        </div>
+                    </div>
+                    <br></br>
+
+                    <table class="mb-0 table">
+                        <thead>
+                            <tr>
+                                <th>Expert ID</th>
+                                <th>Form ID</th>
+                                <th>Question</th>
+                                <th>Response</th>
+                                <th>FeedBack</th>
+                                <th>Time/Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ccmg2form in ccmg2table %}
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>1. Is configuration management performed for technology assets? [TM:SG4.SP2] </td>
+                                <td>{{ccmg2form.response_one}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_one" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>2. Are techniques in use to detect changes to technology assets? [TM:SG4.SP3] </td>
+                                <td>{{ccmg2form.response_two}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_two" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>3. Are modifications to technology assets reviewed? [TM:SG4.SP2; TM:SG4.SP3] </td>
+                                <td>{{ccmg2form.response_three}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_three" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>4. Are integrity requirements used to determine which staff members are authorized to modify
+                                    information assets? [KIM:SG5.SP1] </td>
+                                <td>{{ccmg2form.response_four}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_four" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>5. Is the integrity of information assets monitored? [KIM:SG5.SP3] </td>
+                                <td>{{ccmg2form.response_five}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_five" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>6. Are unauthorized or unexplained modifications to technology assets addressed?
+                                    [TM:SG4.SP2; TM:SG4.SP3] </td>
+                                <td>{{ccmg2form.response_six}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_six" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>7. Are modifications to technology assets tested before being committed to production
+                                    systems? [TM:SG4.SP4] </td>
+                                <td>{{ccmg2form.response_seven}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_seven" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>8.Has a process for managing access to technology assets been implemented? [TM:SG4.SP1]  </td>
+                                <td>{{ccmg2form.response_eight}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_eight" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>9. Is the maintenance and repair of assets performed and logged in a timely manner?
+                                    [ADM:SG3.SP2],[TM:SG5.SP2] </td>
+                                <td>{{ccmg2form.response_nine}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_nine" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            <tr>
+                                <td>{{ccmg2form.expertid}}</td>
+                                <td>{{ccmg2form.formid}}</td>
+                                <td>10. Is the maintenance and repair of assets performed with approved and controlled tools and/or
+                                    methods? [ADM:SG3.SP2][TM:SG5.SP2] </td>
+                                <td>{{ccmg2form.response_ten}}</td>
+                                {% if ccmg2form.feedback %}
+
+                                {% for key, feedback in ccmg2form.feedback.items %}
+                                {% if key == "response_ten" %}
+                                <td>
+                                    {{feedback}}
+                                </td>
+                                <td>
+                                    <span id="datetime"></span>
+
+                                    <script>
+                                        var dt = new Date();
+                                        document.getElementById("datetime").innerHTML = (("0" + dt.getDate()).slice(-2)) + "." + (("0" + (dt.getMonth() + 1)).slice(-2)) + "." + (dt.getFullYear()) + " " + (("0" + dt.getHours()).slice(-2)) + ":" + (("0" + dt.getMinutes()).slice(-2));
+                                    </script>
+                                </td>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

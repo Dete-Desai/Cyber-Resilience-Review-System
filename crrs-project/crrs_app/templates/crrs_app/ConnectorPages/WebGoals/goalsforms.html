@@ -1,0 +1,70 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Goal Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'domains' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Domain Level
+                    </h5>
+                    <a href="{% url 'assetmanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Asset Management</i>
+                    </a>
+                    <a href="{% url 'controlsmanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Controls Management</i>
+                    </a>
+                    <a href="{% url 'configurationchangemanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Configuration and Change Management</i>
+                    </a>
+                    <a href="{% url 'vulnerabilitymanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Vulnerability Management</i>
+                    </a>
+                    <a href="{% url 'incidentmanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Incident Management</i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title">Domain Level
+                    </h5>
+                    <a href="{% url 'servicecontinuitymanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Service Continuity Management</i>
+                    </a>
+                    <a href="{% url 'riskmanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Risk Management</i>
+                    </a>
+                    <a href="{% url 'externaldependenciesmanagementgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">External Dependencies Management</i>
+                    </a>
+                    <a href="{% url 'trainingawarenessgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Training and Awareness</i>
+                    </a>
+                    <a href="{% url 'situationalawarenessgoalform' %}">
+                        <i class="mb-2 mr-2 btn btn-primary btn-sm btn-block">Situational Awareness</i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

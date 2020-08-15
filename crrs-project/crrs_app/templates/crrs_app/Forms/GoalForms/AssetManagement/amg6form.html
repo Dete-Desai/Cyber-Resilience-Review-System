@@ -1,0 +1,253 @@
+{% extends 'crrs_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>  
+            </div>
+            <div>Cyber Resilience Review System
+                    <div class="page-title-subheading">Asset Managemement Domains
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+<a href="{% url 'assetmanagementgoalform' %}">
+    <i class="fa fa-arrow-left"> Back</i>
+</a>          
+<div class="tab-content">
+    <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+        <div class="main-card mb-3 card">
+            <div class="card-body"><h5 class="card-title">Goal 6 Information assets are categorized and managed to ensure the sustainment and protection of the
+                critical service.</h5>
+                <form action="{% url 'amg6form' %}" method="post" autocomplete="off" class="col-md-12">
+                    {% csrf_token %}
+                    <div class="position-relative form-group">
+                        {{form.expertid|as_crispy_field}}
+                    </div>
+                    <div class="position-relative form-group">
+                        {{form.formid|as_crispy_field}}
+                    </div>
+                <fieldset class="position-relative form-group">
+                    <!--QUESTION-->
+                    1. Are information assets categorized based on sensitivity and potential impact to the critical service (such as
+                       public, internal use only, secret)? [KIM:SG1.SP2] 
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                    <p>
+                                        To determine if information assets are categorized based on sensitivity and potential impact to the critical service. 
+                                    </p>
+                                    <p>
+                                        Criteria for “Yes” Response:
+                                        All information assets that support the critical service are categorized based on the sensitivity and
+                                        potential impact to the critical service.  
+                                    </p>
+                                    <p>
+                                        Criteria for “Incomplete” Response:
+                                        Some information assets that support the critical service are categorized based on the sensitivity and potential impact to the critical service.   
+                                    </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_one|as_crispy_field}}
+                    </div>
+                    <br>
+                    <!--QUESTION-->
+                    2. Is the categorization of information assets monitored and enforced? [KIM:SG1.SP2] 
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                <p>
+                                    To determine if the categorization of information assets is monitored and enforced. 
+                                </p>
+                                <p>
+                                    Criteria for “Yes” Response: 
+                                    The organization monitors and enforces the categorization of all information assets that support the critical service. 
+                                </p>
+                                <p>
+                                    Criteria for “Incomplete” Response:
+                                    The organization monitors and enforces the categorization of some information assets.  
+                                </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_two|as_crispy_field}}
+                    </div>
+                    <br>
+                    <!--QUESTION-->
+                    3. Are there policies and procedures for the proper labeling and handling of information assets? [KIM:SG1.SP2]  
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                <p>
+
+                                </p>
+                                <p>
+                                    Criteria for “Yes” Response: 
+                                    There are documented policies and procedures for the proper labeling and handling of all information assets that support the critical service. 
+                                </p>
+                                <p>
+                                    Criteria for “Incomplete” Response:
+                                    Policies and procedures are in development and partially document.  
+                                </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_three|as_crispy_field}}
+                    </div>
+                    <br>
+                    <!--QUESTION-->
+                    4. Are all staff members who handle information assets (including those who are external to the organization,
+                       such as contractors) trained in the use of information categories? [KIM:SG1.SP2]   
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                <p>
+
+                                </p>
+                                <p>
+                                    Criteria for “Yes” Response:
+                                    All staff members (including those external to the organization) who handle information assets that
+                                    support the critical service are trained in the proper use of information categories. 
+                                </p>
+                                <p>
+                                    Criteria for “Incomplete” Response:
+                                    Some staff members who handle information assets that support the critical service are trained in the
+                                    proper use of information categories. 
+                                </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_four|as_crispy_field}}
+                    </div>
+                    <br>
+                    <!--QUESTION-->
+                    5. Are high-value information assets backed-up and retained? [KIM:SG6.SP1]     
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                <p>
+                                    To determine if high-value information assets are backed-up and retained. 
+                                </p>
+                                <p>
+                                    Criteria for “Yes” Response:
+                                    All high-value information assets that support the critical service are backed-up and retained. 
+                                </p>
+                                <p>
+                                    Criteria for “Incomplete” Response: 
+                                    Some high-value information assets are backed-up and retained.        
+                                </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_five|as_crispy_field}}
+                    </div>
+                    <br>
+                    <!--QUESTION-->
+                    6. Do guidelines exist for properly disposing of information assets? [KIM:SG4.SP3]     
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                <p>
+                                    To determine if guidelines exist for properly disposing of information assets. 
+                                </p>
+                                <p>
+                                    Criteria for “Yes” Response:
+                                    There are documented guidelines for properly disposing of information assets that support the critical
+                                    service. 
+                                </p>
+                                <p>
+                                    Criteria for “Incomplete” Response: 
+                                    Guidelines are in development and partially documented.        
+                                </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_six|as_crispy_field}}
+                    </div>
+                    <br>
+                    <!--QUESTION-->
+                    7. Is adherence to information asset disposal guidelines monitored and enforced? [KIM:SG4.SP3]     
+                    <!-- Button to Open the Modal -->
+                    <div class="widget-content-left">
+                        <div class="btn-group ">
+                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
+                                <i class="fa fa-list-ul ml-2 opacity-8"><b2>Read More</b2></i>
+                            </a>
+                            <div tabindex="-6" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-left">
+                                <p>
+                                    To determine if adherence to information asset disposal guidelines is monitored and enforced. 
+                                </p>
+                                <p>
+                                    Criteria for “Yes” Response:
+                                    The organization monitors and enforces adherence to disposal guidelines for all information assets that support the critical service
+                                </p>
+                                <p>
+                                    Criteria for “Incomplete” Response:
+                                    The organization monitors and enforces adherence to disposal guidelines for some information assets.         
+                                </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!--popup button--> 
+                    <div class="col-md-12 position-relative form-check">
+                        {{form.response_seven|as_crispy_field}}
+                    </div>
+                    
+              </fieldset>
+              <div class=" row col-md-12 ">
+                <div class="col-md-8 position-relative form-check">
+                    <button class="mt-1 btn btn-primary btn-block btn-lg"><i
+                            class="fas fa-database"></i>Submit</button>
+                </div>
+                <div class="col-md-4 position-relative form-check">
+                    <a href="{% url 'amg6table' %}" class="mt-1 btn btn-secondary btn-block btn-lg">
+                        <i class="fas fa-stream"></i>Back To Report
+                    </a>
+                </div>
+            </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

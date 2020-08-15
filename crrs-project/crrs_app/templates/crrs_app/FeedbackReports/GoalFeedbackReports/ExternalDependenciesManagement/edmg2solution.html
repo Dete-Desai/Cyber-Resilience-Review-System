@@ -1,0 +1,81 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Domain Goals and Practices Inputs Feedback Reports.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'edmg2form' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <div class="row col-lg-12">
+                    <div class="col-md-10">
+                        <h5 class="card-title">External Dependancies Management Feedback Report for (Goal 2) Form</h5>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="{% url 'edmg2form' %}" class="btn btn-outline-success">
+                            <i class="fas fa-plus"></i>Add New
+                        </a>
+                    </div>
+                </div>
+                <br></br>
+                <table class="mb-0 table">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Response</th>
+                            <th>FeedBack</th>
+                            <th>Action Edit</th>
+                            <th>Action Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for edmg2form in edmg2solution %}
+                        <tr>
+                            <td>1</td>
+                            <td>{{edmg2form.response_one}}</td>
+                            {% if edmg2form.feedback %}
+
+                            {% for key, feedback in edmg2form.feedback.items %}
+                            {% if key == "response_one" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            <td>
+                                <a href="{% url 'edmg2form_update' edmg2form.id %}" class="btn text-secondary px-o">
+                                    <i class="far fa fa-edit" style="font-size:15px;color:blue">EDIT</i>
+                                </a>
+                            </td>
+                            <td>
+                                <form action="{% url 'edmg2form delete' edmg2form.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">
+                                        <i class="fa fa-trash" style="font-size:15px;color:red">DELETE</i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

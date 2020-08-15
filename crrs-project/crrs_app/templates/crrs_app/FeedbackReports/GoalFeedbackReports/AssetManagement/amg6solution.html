@@ -1,0 +1,165 @@
+{% extends 'crrs_app/base.html' %}
+{% block content %}
+<div class="app-page-title">
+    <div class="page-title-wrapper">
+        <div class="page-title-heading">
+            <div class="page-title-icon">
+                <i class="fas fa-assistive-listening-systems"></i>
+            </div>
+            <div>Cyber Resilience Review System
+                <div class="page-title-subheading">Domain Goals and Practices Inputs Feedback Reports.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--start here-->
+    <a href="{% url 'amg2form' %}">
+        <i class="fa fa-arrow-left"> Back</i>
+    </a>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <div class="row col-lg-12">
+                    <div class="col-md-10">
+                        <h5 class="card-title">Asset Management Feedback Report for (Goal 1) Form</h5>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="{% url 'amg2form' %}" class="btn btn-outline-success">
+                            <i class="fas fa-plus"></i>Add New
+                        </a>
+                    </div>
+                </div>
+                <br></br>
+                <table class="mb-0 table">
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Response</th>
+                            <th>FeedBack</th>
+                            <th>Action Edit</th>
+                            <th>Action Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for amg2form in amg2solution %}
+                        <tr>
+                            <td>1</td>
+                            <td>{{amg2form.response_one}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_one" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                            <td>
+                                <a href="{% url 'amg2form_update' amg2form.id %}" class="btn text-secondary px-o">
+                                    <i class="far fa fa-edit" style="font-size:15px;color:blue">EDIT</i>
+                                </a>
+                            </td>
+                            <td>
+                                <form action="{% url 'amg2form delete' amg2form.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn">
+                                        <i class="fa fa-trash" style="font-size:15px;color:red">DELETE</i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>{{amg2form.response_two}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_two" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>{{amg2form.response_three}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_three" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>{{amg2form.response_four}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_four" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>{{amg2form.response_five}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_five" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>{{amg2form.response_six}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_six" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>{{amg2form.response_seven}}</td>
+                            {% if amg2form.feedback %}
+
+                            {% for key, feedback in amg2form.feedback.items %}
+                            {% if key == "response_seven" %}
+                            <td>
+                                {{feedback}}
+                            </td>
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
